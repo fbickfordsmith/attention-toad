@@ -1,0 +1,8 @@
+i,beta_i,beta_hat_i,stderr_beta_i,description
+0,0.013,0.277,0.005,Intercept
+1,0.003,0.004,0.001,Clutter
+2,0.675,0.120,0.006,Difficulty
+3,-0.006,-0.001,0.005,Scale
+4,-0.383,-0.042,0.015,CNN similarity
+5,0.078,0.004,0.023,Human similarity
+6,-0.006,-0.002,0.004,Semantic similarity
