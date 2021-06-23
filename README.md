@@ -6,7 +6,7 @@
 Top-down attention allows neural networks, both artificial and biological, to focus on the information most relevant for a given task. This is known to enhance performance in visual perception. But it remains unclear how attention brings about its perceptual boost, especially when it comes to naturalistic settings like recognising an object in an everyday scene. What aspects of a visual task does attention help to deal with? We aim to answer this with a computational experiment based on a general framework called task-oriented ablation design. First we define a broad range of visual tasks and identify six factors that underlie task variability. Then on each task we compare the performance of two neural networks, one with top-down attention and one without. These comparisons reveal the task-dependence of attention’s perceptual boost, giving a clearer idea of the role attention plays. Whereas many existing cognitive accounts link attention to stimulus-level variables, such as visual clutter and object scale, we find greater explanatory power in system-level variables that capture the interaction between the model, the distribution of training data and the task format. This finding suggests a shift in how attention is studied could be fruitful. We make publicly available our code and results, along with statistics relevant to ImageNet-based experiments beyond this one. Our contribution serves to support the development of more human-like vision models and the design of more informative machine-learning experiments.
 
 ## Reproduce this project from scratch
-The commands below generate the contents of `data/` and `figures/` from scratch using the code in `src/`. Running them requires a [Conda](https://docs.conda.io) installation and a local copy of [ImageNet](http://www.image-net.org). We provide estimated completion times for all Python scripts. These estimates are based on the configuration specified below&mdash;that is, using one GPU (in our case, an Nvidia GeForce RTX 2080 Ti) and using precomputed image representations saved on a fast storage drive.
+The commands below generate the contents of `data/` and `figures/` from scratch using the code in `src/`. Running them requires a [Conda](https://docs.conda.io) installation and a local copy of [ImageNet](http://www.image-net.org). We provide estimated completion times for all Python scripts, assuming a setup with one GPU and with precomputed image representations saved on a fast storage drive.
 
 ```shell
 # SETUP ------------------------------------------------------------------------
@@ -22,13 +22,13 @@ export CUDA_VISIBLE_DEVICES=$GPU
 export TF_CPP_MIN_LOG_LEVEL=1
 
 # Make a local copy of the repository and use it as the working directory.
-PATH_REPO=~/attention-toad/
-git clone https://github.com/fbickfordsmith/attention-toad.git $PATH_REPO
+PATH_REPO=~/attention-v2/
+git clone https://github.com/fbickfordsmith/attention-v2.git $PATH_REPO
 cd $PATH_REPO
 
 # Build and activate a Conda environment.
 conda env create -f environment.yml
-source activate attention-toad
+source activate attention_toad
 
 # Set up a directory for the metadata used in the experiment.
 export PATH_METADATA=$PATH_REPO/data/metadata/
@@ -165,12 +165,12 @@ python plot_analyse.py
 ```
 
 ## Cite this work
-Please cite our paper if you use our ideas, code or data in your work.
+Please cite [our paper](https://arxiv.org/abs/2106.11339) if you use our code, data or ideas in your work.
 ```
 @article{bickfordsmith21attention,
     author = {Freddie Bickford Smith and Brett D Roads and Xiaoliang Luo and Bradley C Love},
     title = {Understanding top-down attention using task-oriented ablation design},
-    journal = {arXiv:...},
+    journal = {arXiv:2106.11339},
     year = {2021},
 }
 ```
