@@ -22,13 +22,13 @@ export CUDA_VISIBLE_DEVICES=$GPU
 export TF_CPP_MIN_LOG_LEVEL=1
 
 # Make a local copy of the repository and use it as the working directory.
-PATH_REPO=~/attention-v2/
-git clone https://github.com/fbickfordsmith/attention-v2.git $PATH_REPO
+PATH_REPO=~/attention-toad/
+git clone https://github.com/fbickfordsmith/attention-toad.git $PATH_REPO
 cd $PATH_REPO
 
 # Build and activate a Conda environment.
 conda env create -f environment.yml
-source activate attention_toad
+source activate attention-toad
 
 # Set up a directory for the metadata used in the experiment.
 export PATH_METADATA=$PATH_REPO/data/metadata/
